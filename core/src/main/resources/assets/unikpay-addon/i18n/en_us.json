@@ -1,0 +1,15 @@
+{
+  "unikpay-addon": {
+    "settings": {
+      "name": "UnikPay",
+      "header": {
+        "general": {
+          "name": "UnikPay settings"
+        }
+      },
+      "enabled": {
+        "name": "Enable Unikpay"
+      }
+    }
+  }
+}
