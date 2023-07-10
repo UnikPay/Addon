@@ -1,5 +1,10 @@
 {
   "unikpay-addon": {
+    "hudWidget": {
+      "balance": {
+        "name": "UnikPay Balance"
+      }
+    },
     "settings": {
       "name": "UnikPay",
       "header": {
@@ -10,6 +15,7 @@
       "enabled": {
         "name": "Enable Unikpay"
       }
+
     }
   }
 }
