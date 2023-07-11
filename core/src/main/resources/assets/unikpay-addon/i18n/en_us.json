@@ -14,8 +14,16 @@
       },
       "enabled": {
         "name": "Enable Unikpay"
+      },
+      "openInformation": {
+        "name": "Unikpay information"
       }
 
+    },
+    "gui": {
+      "manage": {
+
+      }
     }
   }
 }
