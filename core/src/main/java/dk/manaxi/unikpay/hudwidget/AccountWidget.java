@@ -7,6 +7,9 @@ import net.labymod.api.client.gui.screen.widget.SimpleWidget;
 import net.labymod.api.client.gui.icon.Icon;
 import net.labymod.api.client.gui.screen.widget.widgets.ComponentWidget;
 import net.labymod.api.client.gui.screen.widget.widgets.renderer.IconWidget;
+import net.labymod.api.client.session.MinecraftAuthenticator;
+import net.labymod.api.client.session.Session;
+import java.util.concurrent.CompletableFuture;
 
 public class AccountWidget extends SimpleWidget {
   private Account account;

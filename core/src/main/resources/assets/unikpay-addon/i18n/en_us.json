@@ -15,6 +15,9 @@
       "enabled": {
         "name": "Enable Unikpay"
       },
+      "text": {
+        "name": "indsæt din labyToken"
+      },
       "openInformation": {
         "name": "Unikpay information"
       }
