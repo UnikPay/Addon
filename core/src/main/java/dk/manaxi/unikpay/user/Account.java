@@ -1,5 +1,7 @@
 package dk.manaxi.unikpay.user;
 
+import dk.manaxi.unikpay.Main;
+import dk.manaxi.unikpay.utils.FormatingUtils;
 import java.util.UUID;
 
 public class Account {
@@ -8,13 +10,12 @@ public class Account {
   private String username;
   private float balance;
 
-  private Servers[] servers;
 
-  public Account(UUID uuid, String username, float balance, Servers[] servers) {
+
+  public Account(UUID uuid, String username, float balance) {
     this.uuid = uuid;
     this.username = username;
     this.balance = balance;
-    this.servers = servers;
   }
 
   public UUID getUuid() {
@@ -29,9 +30,18 @@ public class Account {
     return balance;
   }
 
-  public Servers[] getServers() {
-    return servers;
+  public String getBalanceFormatted() {
+     if (Main.getInstance().configuration.getType().get().name().equalsIgnoreCase("INGEN")) {
+       return String.valueOf(getBalance());
+
+     } else if (Main.getInstance().configuration.getType().get().name().equalsIgnoreCase("Punktum")) {
+       return FormatingUtils.formatNumber(getBalance(), FormatingUtils.FORMATTING_MODE.PUNKTUM);
+     } else if (Main.getInstance().configuration.getType().get().name().equalsIgnoreCase("ENDELSE")) {
+       return FormatingUtils.formatNumber(getBalance(), FormatingUtils.FORMATTING_MODE.ENDELSE);
+     }
+    return null;
   }
+
 
   public void setBalance(float balance) {
     this.balance = balance;

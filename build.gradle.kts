@@ -14,7 +14,7 @@ labyMod {
     addonInfo {
         namespace = "unikpay-addon"
         displayName = "Unikpay"
-        author = "Itz_hoffe & Shad0wsense"
+        author = "Itz_hoffe, Shad0wsense & Iskoldcool"
         description = "Handle incoming payments"
         minecraftVersion = "*"
         version = System.getenv().getOrDefault("VERSION", "0.0.1")

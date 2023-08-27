@@ -20,8 +20,15 @@
       },
       "openInformation": {
         "name": "Unikpay information"
+      },
+      "type": {
+        "name": "Format type",
+        "entries": {
+          "ingen": "Ingen",
+          "punktum": "Punktum",
+          "endelse": "Endelse"
+        }
       }
-
     },
     "gui": {
       "manage": {

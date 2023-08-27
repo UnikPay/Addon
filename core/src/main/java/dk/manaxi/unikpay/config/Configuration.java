@@ -1,6 +1,8 @@
 package dk.manaxi.unikpay.config;
 
 import dk.manaxi.unikpay.menus.Information;
+import dk.manaxi.unikpay.utils.FormatingUtils;
+import dk.manaxi.unikpay.utils.FormatingUtils.FORMATTING_MODE;
 import net.labymod.api.addon.AddonConfig;
 import net.labymod.api.client.gui.screen.activity.Activity;
 import net.labymod.api.client.gui.screen.key.Key;
@@ -8,6 +10,7 @@ import net.labymod.api.client.gui.screen.widget.widgets.activity.settings.AddonA
 import net.labymod.api.client.gui.screen.widget.widgets.input.KeybindWidget.KeyBindSetting;
 import net.labymod.api.client.gui.screen.widget.widgets.input.SwitchWidget.SwitchSetting;
 import net.labymod.api.client.gui.screen.widget.widgets.input.TextFieldWidget.TextFieldSetting;
+import net.labymod.api.client.gui.screen.widget.widgets.input.dropdown.DropdownWidget.DropdownSetting;
 import net.labymod.api.configuration.loader.annotation.ConfigName;
 import net.labymod.api.configuration.loader.annotation.Exclude;
 import net.labymod.api.configuration.loader.annotation.SpriteSlot;
@@ -35,6 +38,10 @@ public class Configuration extends AddonConfig {
     return new Information();
   }
 
+  @SpriteSlot(y = 3)
+  @DropdownSetting
+  private ConfigProperty<FormatingUtils.FORMATTING_MODE> type = new ConfigProperty<>(FORMATTING_MODE.INGEN);
+
 
   @Override
   public ConfigProperty<Boolean> enabled() {
@@ -45,6 +52,8 @@ public class Configuration extends AddonConfig {
     return this.text;
   }
 
-
+  public ConfigProperty<FORMATTING_MODE> getType() {
+    return this.type;
+  }
 
 }
