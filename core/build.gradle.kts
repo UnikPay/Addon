@@ -9,6 +9,9 @@ dependencies {
     maven(mavenCentral(), "io.socket:socket.io-client:2.1.0")
     maven(mavenCentral(), "io.socket:engine.io-client:2.1.0")
     maven(mavenCentral(), "org.json:json:20230618")
+    maven(mavenCentral(), "com.squareup.okhttp3:okhttp:4.11.0")
+    maven(mavenCentral(), "org.jetbrains.kotlin:kotlin-stdlib:1.6.20")
+    maven(mavenCentral(), "com.squareup.okio:okio-jvm:3.5.0")
     // If you want to use external libraries, you can do that here.
     // The dependencies that are specified here are loaded into your project but will also
     // automatically be downloaded by labymod, but only if the repository is public.
