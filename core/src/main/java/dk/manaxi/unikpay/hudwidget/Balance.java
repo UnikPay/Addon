@@ -30,9 +30,8 @@ public class Balance extends TextHudWidget<TextHudWidgetConfig> {
   @Override
   public void load(TextHudWidgetConfig config) {
     super.load(config);
-    if(!IoSocket.getSocket().connected()) {
-      this.balance = super.createLine("UnikPay Balance", "Loading...");
-    }
+    this.balance = super.createLine("UnikPay Balance", "Loading...");
+
     this.setIcon(this.icon);
   }
   @Subscribe

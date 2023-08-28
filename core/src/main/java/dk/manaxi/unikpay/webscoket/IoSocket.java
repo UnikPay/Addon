@@ -1,5 +1,7 @@
 package dk.manaxi.unikpay.webscoket;
 
+import static java.util.Collections.singletonMap;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -8,13 +10,9 @@ import dk.manaxi.unikpay.events.AccountEvt;
 import dk.manaxi.unikpay.user.Account;
 import io.socket.client.IO;
 import io.socket.client.Socket;
-import net.labymod.api.LabyAPI;
-import java.math.BigDecimal;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.UUID;
-
-import static java.util.Collections.singletonMap;
 
 public class IoSocket {
   private static Socket socket;
@@ -49,15 +47,14 @@ public class IoSocket {
             username,
             balance
         );
-        Main.getInstance().labyAPI().eventBus().fire(new AccountEvt(account));
-
-
       });
+      socket.connect();
+
+    } catch (URISyntaxException ignored){
+
+    }
 
 
-    } catch (URISyntaxException ignored){}
-
-    socket.connect();
   }
 
   public static Socket getSocket() {

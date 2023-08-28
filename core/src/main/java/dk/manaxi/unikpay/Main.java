@@ -1,6 +1,7 @@
 package dk.manaxi.unikpay;
 
 import dk.manaxi.unikpay.config.Configuration;
+import dk.manaxi.unikpay.events.AccountEvt;
 import dk.manaxi.unikpay.hudwidget.Balance;
 import dk.manaxi.unikpay.listener.KeyPress;
 import dk.manaxi.unikpay.webscoket.IoSocket;
@@ -23,8 +24,9 @@ public class Main extends LabyAddon<Configuration> {
   @Override
   protected void enable() {
     this.registerSettingCategory();
+    System.out.println("Main.getInstance().configuration.getToken().get()) " + Main.getInstance().configuration.getToken().get());
     IoSocket.connectSocket();
-    System.out.println("Main.getInstance().configuration.getType().get().name() " + Main.getInstance().configuration.getType().get().name());
+    Main.getInstance().labyAPI().eventBus().fire(new AccountEvt(IoSocket.getAccount()));
     this.registerListener(new KeyPress(this));
     labyAPI().hudWidgetRegistry().register(new Balance("balance", hudIcon));
     this.logger().info("Enabled the Addon");
