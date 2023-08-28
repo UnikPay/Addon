@@ -8,6 +8,7 @@ dependencies {
     api(project(":api"))
     maven(mavenCentral(), "io.socket:socket.io-client:2.1.0")
     maven(mavenCentral(), "io.socket:engine.io-client:2.1.0")
+    maven(mavenCentral(), "org.json:json:20230618")
     // If you want to use external libraries, you can do that here.
     // The dependencies that are specified here are loaded into your project but will also
     // automatically be downloaded by labymod, but only if the repository is public.
