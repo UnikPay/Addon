@@ -19,9 +19,7 @@ public class ChatListener {
   @Subscribe
   public void onGameTick(ChatMessageSendEvent event) {
     if(event.getMessage().equals("test")) {
-      Request activity = new Request(new Pakke(100, "test", "test"));
-      Laby.labyAPI().minecraft().minecraftWindow().displayScreen(activity);
-      addon.logger().info("HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      ((Request) addon.labyAPI().ingameOverlay().getActivity(Request.class).get()).setVisible(true);
     }
   }
 

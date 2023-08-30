@@ -1,0 +1,7 @@
+.test-widget {
+  left: 50%;
+  top: 50%;
+  alignment-x: center;
+  alignment-y: center;
+  text-color: gold;
+}

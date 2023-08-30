@@ -37,7 +37,7 @@ public class AccountWidget extends SimpleWidget {
 
 
   public Icon getIconWidget(String userName) {
-    return Icon.head(userName.length() == 0 ? "MHF_Question" : userName);
+    return Icon.head(userName.isEmpty() ? "MHF_Question" : userName);
   }
 
   public String getUserName() {
