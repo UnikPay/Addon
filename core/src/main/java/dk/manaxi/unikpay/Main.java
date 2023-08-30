@@ -3,6 +3,7 @@ package dk.manaxi.unikpay;
 import dk.manaxi.unikpay.config.Configuration;
 import dk.manaxi.unikpay.events.AccountEvt;
 import dk.manaxi.unikpay.hudwidget.Balance;
+import dk.manaxi.unikpay.listener.ChatListener;
 import dk.manaxi.unikpay.listener.KeyPress;
 import dk.manaxi.unikpay.webscoket.IoSocket;
 import net.labymod.api.addon.LabyAddon;
@@ -30,6 +31,7 @@ public class Main extends LabyAddon<Configuration> {
     this.registerListener(new KeyPress(this));
     labyAPI().hudWidgetRegistry().register(new Balance("balance", hudIcon));
     this.logger().info("Enabled the Addon");
+    Main.getInstance().labyAPI().eventBus().registerListener(new ChatListener(this));
 
   }
 

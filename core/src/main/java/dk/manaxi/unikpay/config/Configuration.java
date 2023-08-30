@@ -6,6 +6,7 @@ import dk.manaxi.unikpay.utils.FormatingUtils.FORMATTING_MODE;
 import net.labymod.api.addon.AddonConfig;
 import net.labymod.api.client.gui.screen.activity.Activity;
 import net.labymod.api.client.gui.screen.key.Key;
+import net.labymod.api.client.gui.screen.widget.widgets.activity.settings.ActivitySettingWidget.ActivitySetting;
 import net.labymod.api.client.gui.screen.widget.widgets.activity.settings.AddonActivityWidget.AddonActivitySetting;
 import net.labymod.api.client.gui.screen.widget.widgets.input.KeybindWidget.KeyBindSetting;
 import net.labymod.api.client.gui.screen.widget.widgets.input.SwitchWidget.SwitchSetting;
@@ -33,7 +34,7 @@ public class Configuration extends AddonConfig {
   private ConfigProperty<String> text = new ConfigProperty<>("Key");
 
   @MethodOrder(after = "enabled")
-  @AddonActivitySetting
+  @ActivitySetting
   public Activity openInformation() {
     return new Information();
   }
