@@ -1,7 +1,28 @@
 .test-widget {
   left: 50%;
-  top: 50%;
+  top: 30%;
   alignment-x: center;
   alignment-y: center;
   text-color: gold;
+}
+
+.server-icon {
+  left: 50%;
+  top: 10%;
+  alignment-x: center;
+  alignment-y: center;
+}
+
+.accept-button {
+  left: 40%;
+  top: 70%;
+  alignment-x: center;
+  alignment-y: center;
+}
+
+.deny-button {
+  left: 60%;
+  top: 70%;
+  alignment-x: center;
+  alignment-y: center;
 }
