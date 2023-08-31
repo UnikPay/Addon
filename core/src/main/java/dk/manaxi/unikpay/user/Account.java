@@ -2,6 +2,7 @@ package dk.manaxi.unikpay.user;
 
 import dk.manaxi.unikpay.Main;
 import dk.manaxi.unikpay.utils.FormatingUtils;
+
 import java.util.UUID;
 
 public class Account {

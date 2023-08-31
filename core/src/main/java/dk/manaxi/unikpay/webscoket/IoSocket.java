@@ -1,18 +1,18 @@
 package dk.manaxi.unikpay.webscoket;
 
-import static java.util.Collections.singletonMap;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import dk.manaxi.unikpay.Main;
-import dk.manaxi.unikpay.events.AccountEvt;
 import dk.manaxi.unikpay.user.Account;
 import io.socket.client.IO;
 import io.socket.client.Socket;
+
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.UUID;
+
+import static java.util.Collections.singletonMap;
 
 public class IoSocket {
   private static Socket socket;
