@@ -35,8 +35,6 @@ public class Main extends LabyAddon<Configuration> {
     labyAPI().hudWidgetRegistry().register(new Balance("balance", hudIcon));
     this.logger().info("Enabled the Addon");
     labyAPI().eventBus().registerListener(new ChatListener(this));
-
-    labyAPI().ingameOverlay().registerActivity(new Request(new Pakke(100, "test", "test")));
   }
 
   @Override
