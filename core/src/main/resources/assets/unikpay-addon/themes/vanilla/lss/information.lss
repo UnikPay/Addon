@@ -1,0 +1,6 @@
+.name-widget {
+    left: 50%;
+    top: 30%;
+    alignment-x: center;
+    alignment-y: center;
+ }

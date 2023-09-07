@@ -2,6 +2,7 @@ package dk.manaxi.unikpay.user;
 
 import dk.manaxi.unikpay.Main;
 import dk.manaxi.unikpay.utils.FormatingUtils;
+import net.labymod.api.client.gui.icon.Icon;
 
 import java.util.UUID;
 
@@ -41,6 +42,10 @@ public class Account {
        return FormatingUtils.formatNumber(getBalance(), FormatingUtils.FORMATTING_MODE.ENDELSE);
      }
     return null;
+  }
+
+  public Icon getIconWidget() {
+    return Icon.head(username.length() == 0 ? "MHF_Question" : username);
   }
 
 

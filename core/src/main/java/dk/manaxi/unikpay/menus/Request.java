@@ -62,4 +62,10 @@ public class Request extends SimpleActivity {
     this.document().addChildAsync(accept);
     this.document().addChildAsync(deny);
   }
+
+  @Override
+  public void onCloseScreen() {
+    super.onCloseScreen();
+    //Bruges til at deny requesten også
+  }
 }

@@ -13,12 +13,10 @@ public class Balance extends TextHudWidget<TextHudWidgetConfig> {
 
   private TextLine balance;
   private final Icon icon;
-  private Main main;
 
   public Balance(String id, Icon icon) {
     super(id);
     this.icon = icon;
-    this.main = main;
   }
 
 

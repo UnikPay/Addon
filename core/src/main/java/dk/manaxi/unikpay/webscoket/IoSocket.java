@@ -9,7 +9,9 @@ import io.socket.client.IO;
 import io.socket.client.Socket;
 
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 import static java.util.Collections.singletonMap;
@@ -17,6 +19,7 @@ import static java.util.Collections.singletonMap;
 public class IoSocket {
   private static Socket socket;
   private static Account account;
+  private static List<Account> accounts = new ArrayList<>();
 
   public static void connectSocket() {
     try {
@@ -42,11 +45,13 @@ public class IoSocket {
         System.out.println("UUID " + uuid);
         System.out.println("Username " + username);
         System.out.println("Balance " + balance);
+
         account = new Account(
             uuid,
             username,
             balance
         );
+        accounts.add(account);
       });
       socket.connect();
 
@@ -63,6 +68,10 @@ public class IoSocket {
 
   public static Account getAccount() {
     return account;
+  }
+
+  public static List<Account> getAccounts() {
+    return accounts;
   }
 
 }
