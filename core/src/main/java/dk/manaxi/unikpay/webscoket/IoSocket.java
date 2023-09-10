@@ -3,12 +3,16 @@ package dk.manaxi.unikpay.webscoket;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import dk.manaxi.unikpay.Main;
+import dk.manaxi.unikpay.api.classes.Pakke;
 import dk.manaxi.unikpay.events.AccountEvt;
+import dk.manaxi.unikpay.menus.RequestMenu;
 import dk.manaxi.unikpay.user.Account;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 
+import java.lang.reflect.Type;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,6 +57,24 @@ public class IoSocket {
         accounts.add(account);
         labyAPI().eventBus().fire(new AccountEvt(IoSocket.getAccount()));
       });
+
+      socket.on("newRequest", args -> {
+        System.out.println(args[0]);
+        String ok = Arrays.toString(args);
+        Gson gson = new Gson();
+        JsonArray jsonArray = gson.fromJson(ok, JsonArray.class);
+
+        JsonObject obj = jsonArray.get(0).getAsJsonObject();
+        String server = obj.get("server").getAsString();
+        Type listType = new TypeToken<List<Pakke>>() {}.getType();
+        List<Pakke> pakker = gson.fromJson(obj.getAsJsonArray("packages"), listType);
+        Pakke[] pakkerArray = pakker.toArray(new Pakke[0]);
+        String id = obj.get("_id").getAsString();
+
+        RequestMenu request = new RequestMenu(server, id, pakkerArray);
+        Main.getInstance().labyAPI().minecraft().executeNextTick(() -> Main.getInstance().labyAPI().minecraft().minecraftWindow().displayScreen(request));
+      });
+
       socket.connect();
 
     } catch (URISyntaxException ignored){

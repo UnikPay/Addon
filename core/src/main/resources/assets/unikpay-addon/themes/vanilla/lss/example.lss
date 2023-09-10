@@ -13,6 +13,34 @@
   alignment-y: center;
 }
 
+.pakke-navn {
+  left: 50%;
+  top: 50%;
+  alignment-x: center;
+  alignment-y: center;
+}
+
+.server {
+  left: 50%;
+  top: 40%;
+  alignment-x: center;
+  alignment-y: center;
+}
+
+.server-name {
+  left: 50%;
+  top: 43%;
+  alignment-x: center;
+  alignment-y: center;
+}
+
+.packages {
+  left: 50%;
+  top: 50%;
+  alignment-x: center;
+  alignment-y: center;
+}
+
 .accept-button {
   left: 40%;
   top: 70%;
@@ -26,3 +54,4 @@
   alignment-x: center;
   alignment-y: center;
 }
+
