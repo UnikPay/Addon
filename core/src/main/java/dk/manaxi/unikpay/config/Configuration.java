@@ -3,6 +3,7 @@ package dk.manaxi.unikpay.config;
 import dk.manaxi.unikpay.menus.Information;
 import dk.manaxi.unikpay.utils.FormatingUtils;
 import dk.manaxi.unikpay.utils.FormatingUtils.FORMATTING_MODE;
+import dk.manaxi.unikpay.webscoket.IoSocket;
 import net.labymod.api.addon.AddonConfig;
 import net.labymod.api.client.gui.screen.activity.Activity;
 import net.labymod.api.client.gui.screen.widget.widgets.activity.settings.ActivitySettingWidget.ActivitySetting;
@@ -29,6 +30,7 @@ public class Configuration extends AddonConfig {
   @TextFieldSetting
   private ConfigProperty<String> text = new ConfigProperty<>("Key");
 
+
   @MethodOrder(after = "enabled")
   @ActivitySetting
   public Activity openInformation() {
@@ -48,6 +50,7 @@ public class Configuration extends AddonConfig {
   public ConfigProperty<String> getToken() {
     return this.text;
   }
+
 
   public ConfigProperty<FORMATTING_MODE> getType() {
     return this.type;

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import dk.manaxi.unikpay.Main;
+import dk.manaxi.unikpay.events.AccountEvt;
 import dk.manaxi.unikpay.user.Account;
 import io.socket.client.IO;
 import io.socket.client.Socket;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static java.util.Collections.singletonMap;
+import static net.labymod.api.Laby.labyAPI;
 
 public class IoSocket {
   private static Socket socket;
@@ -23,9 +25,7 @@ public class IoSocket {
 
   public static void connectSocket() {
     try {
-      IO.Options options = IO.Options.builder()
-          .setAuth(singletonMap("token", Main.getInstance().configuration.getToken().get()))
-          .build();
+      IO.Options options = IO.Options.builder().setAuth(singletonMap("token", Main.getInstance().configuration.getToken().get())).build();
       socket = IO.socket("https://unikpay.manaxi.dk/", options);
       socket.on(Socket.EVENT_CONNECT, args -> System.out.println("Socket.io connected."));
       socket.on(Socket.EVENT_DISCONNECT, args -> System.out.println("Socket.io disconnected."));
@@ -37,7 +37,6 @@ public class IoSocket {
         JsonArray jsonArray = gson.fromJson(ok, JsonArray.class);
 
         JsonObject obj = jsonArray.get(0).getAsJsonObject();
-        System.out.println("Obj " + obj);
         UUID uuid = UUID.fromString(obj.getAsJsonObject("mcAccount").get("uuid").getAsString());
         float balance = obj.getAsJsonObject("mcAccount").getAsJsonObject("balance").get("$numberDecimal").getAsFloat();
 
@@ -52,6 +51,7 @@ public class IoSocket {
             balance
         );
         accounts.add(account);
+        labyAPI().eventBus().fire(new AccountEvt(IoSocket.getAccount()));
       });
       socket.connect();
 

@@ -25,10 +25,9 @@ public class Main extends LabyAddon<Configuration> {
   @Override
   protected void enable() {
     this.registerSettingCategory();
-    System.out.println("Main.getInstance().configuration.getToken().get()) " + Main.getInstance().configuration.getToken().get());
+
     IoSocket.connectSocket();
-    Main.getInstance().labyAPI().eventBus().fire(new AccountEvt(IoSocket.getAccount()));
-    this.registerListener(new KeyPress(this));
+
     labyAPI().hudWidgetRegistry().register(new Balance("balance", hudIcon));
     this.logger().info("Enabled the Addon");
     labyAPI().eventBus().registerListener(new ChatListener(this));
@@ -46,12 +45,13 @@ public class Main extends LabyAddon<Configuration> {
     return instance;
   }
 
-
+  public void disconnect() {
+    IoSocket.getSocket().disconnect();
+  }
 
   public static Minecraft getMinecraft() {
     return minecraft;
   }
-
 
 
 

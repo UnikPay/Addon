@@ -1,6 +1,19 @@
+.user-icon {
+    left: 50%;
+    top: 10%;
+    alignment-x: center;
+    alignment-y: center;
+
+  }
 .name-widget {
     left: 50%;
-    top: 30%;
+    top: 25%;
     alignment-x: center;
     alignment-y: center;
  }
+ .balance-widget {
+     left: 50%;
+     top: 28%;
+     alignment-x: center;
+     alignment-y: center;
+  }

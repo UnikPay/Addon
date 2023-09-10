@@ -45,7 +45,7 @@ public class Account {
   }
 
   public Icon getIconWidget() {
-    return Icon.head(username.length() == 0 ? "MHF_Question" : username);
+    return Icon.head(username.length() == 0 ? "Unikpay" : username);
   }
 
 
