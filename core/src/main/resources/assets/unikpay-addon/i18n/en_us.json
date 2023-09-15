@@ -16,10 +16,12 @@
         "name": "Enable Unikpay"
       },
       "text": {
-        "name": "indsæt din labyToken"
+        "name": "indsæt din labyToken",
+        "description": "Din Labymod-token, som er hemmelig, skal være her."
       },
       "openInformation": {
-        "name": "Unikpay information"
+        "name": "Unikpay information",
+        "description": "Åben Unikpay information"
       },
       "type": {
         "name": "Format type",

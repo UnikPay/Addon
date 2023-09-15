@@ -1,0 +1,8 @@
+# TODO
+| IDE                                                                                                   |         |
+|:------------------------------------------------------------------------------------------------------|---------|
+| Lav request systemet om til en util                           	                                       | &#9745; |
+| Test om subscription systemet virker                         	                                        | &#9744; |
+| Lav information systemet bedre, pænere og medre flere ting så som discord                           	 | &#9744; |
+| Update checker                            	                                                           | &#9744; |
+| Lav nogle iconer til de forskellige billeder                                                          | &#9744; |

@@ -17,6 +17,7 @@ labyMod {
         author = "Itz_hoffe, Shad0wsense & Iskoldcool"
         description = "Handle incoming payments"
         minecraftVersion = "*"
+        iconUrl = "https://raw.githubusercontent.com/UnikPay/assets/main/500.png"
         version = System.getenv().getOrDefault("VERSION", "0.0.1")
     }
 

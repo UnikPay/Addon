@@ -6,6 +6,7 @@ import dk.manaxi.unikpay.hudwidget.Balance;
 import dk.manaxi.unikpay.listener.ChatListener;
 import dk.manaxi.unikpay.listener.KeyPress;
 import dk.manaxi.unikpay.webscoket.IoSocket;
+import net.labymod.api.Laby;
 import net.labymod.api.addon.LabyAddon;
 import net.labymod.api.client.Minecraft;
 import net.labymod.api.client.gui.icon.Icon;
@@ -18,14 +19,13 @@ public class Main extends LabyAddon<Configuration> {
   private static Main instance;
   private static Minecraft minecraft;
   private final Icon hudIcon = Icon.texture(ResourceLocation.create(
-      "unikpay",
+      "unikpay-addon",
       "themes/vanilla/textures/settings/hud/emerald.png"
   )).resolution(64, 64);
 
   @Override
   protected void enable() {
     this.registerSettingCategory();
-
     IoSocket.connectSocket();
 
     labyAPI().hudWidgetRegistry().register(new Balance("balance", hudIcon));
