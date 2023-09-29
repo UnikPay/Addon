@@ -18,7 +18,7 @@ public class Main extends LabyAddon<Configuration> {
   public Configuration configuration = configuration();
   private static Main instance;
   private static Minecraft minecraft;
-  private final Icon hudIcon = Icon.texture(ResourceLocation.create(
+  public static final Icon hudIcon = Icon.texture(ResourceLocation.create(
       "unikpay-addon",
       "themes/vanilla/textures/settings/hud/emerald.png"
   )).resolution(64, 64);

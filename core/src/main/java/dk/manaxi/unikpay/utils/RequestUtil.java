@@ -1,7 +1,6 @@
 package dk.manaxi.unikpay.utils;
 
 import dk.manaxi.unikpay.Main;
-import dk.manaxi.unikpay.Secret;
 import net.labymod.api.client.gui.screen.NamedScreen;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -17,7 +16,7 @@ public class RequestUtil {
     String url = "https://unikpay.manaxi.dk/v1/request/" + id + "/" + choice;
 
     okhttp3.Request request = new okhttp3.Request.Builder().url(url).post(RequestBody.create(MediaType.parse("application/json"), ""))
-        .header("Authorization", Secret.KEY)
+        .header("Authorization", Main.getInstance().configuration.getToken().get())
         .build();
     Main.getInstance().labyAPI().minecraft().minecraftWindow().displayScreen(NamedScreen.MAIN_MENU.create());
     Response response = client.newCall(request).execute();

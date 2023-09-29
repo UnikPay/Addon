@@ -18,12 +18,10 @@ import net.labymod.api.configuration.settings.annotation.SettingSection;
 import net.labymod.api.util.MethodOrder;
 
 @SuppressWarnings("FieldMayBeFinal")
-@SpriteTexture("settings")
 @ConfigName("settings")
 public class Configuration extends AddonConfig {
 
   @SettingSection("general")
-  @SpriteSlot
   @SwitchSetting
   private final ConfigProperty<Boolean> enabled = new ConfigProperty<>(true);
 

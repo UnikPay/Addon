@@ -45,9 +45,6 @@ public class IoSocket {
         float balance = obj.getAsJsonObject("mcAccount").getAsJsonObject("balance").get("$numberDecimal").getAsFloat();
 
         String username = obj.getAsJsonObject("mcAccount").get("username").getAsString();
-        System.out.println("UUID " + uuid);
-        System.out.println("Username " + username);
-        System.out.println("Balance " + balance);
 
         account = new Account(
             uuid,
@@ -59,7 +56,6 @@ public class IoSocket {
       });
 
       socket.on("newRequest", args -> {
-        System.out.println(args[0]);
         String ok = Arrays.toString(args);
         Gson gson = new Gson();
         JsonArray jsonArray = gson.fromJson(ok, JsonArray.class);
@@ -74,6 +70,7 @@ public class IoSocket {
         RequestMenu request = new RequestMenu(server, id, pakkerArray);
         Main.getInstance().labyAPI().minecraft().executeNextTick(() -> Main.getInstance().labyAPI().minecraft().minecraftWindow().displayScreen(request));
       });
+
 
       socket.connect();
 

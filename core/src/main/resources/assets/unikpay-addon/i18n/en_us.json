@@ -17,7 +17,8 @@
       },
       "text": {
         "name": "indsæt din labyToken",
-        "description": "Din Labymod-token, som er hemmelig, skal være her."
+        "description": "Din Labymod-token, som er hemmelig, skal være her.",
+        "blank": "Din token er tom. Indsæt din token her."
       },
       "openInformation": {
         "name": "Unikpay information",

@@ -1,7 +1,6 @@
 package dk.manaxi.unikpay.menus;
 
 import dk.manaxi.unikpay.Main;
-import dk.manaxi.unikpay.Secret;
 import dk.manaxi.unikpay.api.classes.Pakke;
 import dk.manaxi.unikpay.utils.NotificationUtil;
 import java.io.IOException;
@@ -19,10 +18,6 @@ import net.labymod.api.client.gui.screen.widget.widgets.layout.list.HorizontalLi
 import net.labymod.api.client.gui.screen.widget.widgets.renderer.IconWidget;
 import net.labymod.api.client.render.matrix.Stack;
 import net.labymod.api.util.bounds.ModifyReason;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 @AutoActivity
 @Link("example.lss")
@@ -45,17 +40,13 @@ public class RequestMenu extends SimpleActivity {
   @Override
   public void initialize(Parent parent) {
     super.initialize(parent);
-
-    IconWidget iconWidget = new IconWidget(
-        Icon.url("https://raw.githubusercontent.com/UnikPay/assets/main/500.png")
-    );
+    IconWidget iconWidget = new IconWidget( Icon.url("https://raw.githubusercontent.com/UnikPay/assets/main/500.png"));
     iconWidget.addId("server-icon");
     iconWidget.bounds().setSize(64, MODIFY_REASON);
 
     HorizontalListWidget listWidget = new HorizontalListWidget();
     for (Pakke pakke : pakker) {
       listWidget.addEntry(ComponentWidget.text(pakke.getName() + " for " + pakke.getPrice() + " ems") .addId("pakke-navn") );
-
     }
     listWidget.spaceLeft().set(438.00F);
     listWidget.setTranslateY(265.5F);
@@ -74,7 +65,7 @@ public class RequestMenu extends SimpleActivity {
     ButtonWidget accept = ButtonWidget.text("§aAccept", () -> {
       try {
         RequestUtil.request(this.id, "accept");
-        NotificationUtil.createNofication("Du har accepteret din anmodning");
+        NotificationUtil.createNotification("Du har accepteret din anmodning");
 
       } catch (IOException e) {
         throw new RuntimeException(e);
@@ -86,7 +77,7 @@ public class RequestMenu extends SimpleActivity {
       try {
         RequestUtil.request(this.id, "decline");
         Main.getInstance().labyAPI().minecraft().minecraftWindow().displayScreen(NamedScreen.MAIN_MENU.create());
-        NotificationUtil.createNofication("Du har afvist din anmodning");
+        NotificationUtil.createNotification("Du har afvist din anmodning");
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
