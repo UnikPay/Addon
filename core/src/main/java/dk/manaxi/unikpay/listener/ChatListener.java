@@ -21,7 +21,6 @@ public class ChatListener {
       addon.labyAPI().minecraft().executeNextTick(() -> addon.labyAPI().minecraft().minecraftWindow().displayScreen(request));
 
     } else if (event.getMessage().equals("socketTest")) {
-      System.out.println("Main.getInstance().configuration.getToken().get() " + Main.getInstance().configuration.getToken().get());
       IoSocket.getSocket().disconnect();
       IoSocket.connectSocket();
     }

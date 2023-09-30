@@ -20,6 +20,11 @@
         "description": "Din Labymod-token, som er hemmelig, skal være her.",
         "blank": "Din token er tom. Indsæt din token her."
       },
+      "print": {
+        "name": "Forbind til UnikPay",
+        "text": "Reload connection",
+        "description": "klik her for at reconnect din forbindelse med unikpay."
+      },
       "openInformation": {
         "name": "Unikpay information",
         "description": "Åben Unikpay information"
