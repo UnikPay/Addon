@@ -16,14 +16,7 @@ public class ChatListener {
 
   @Subscribe
   public void onGameTick(ChatMessageSendEvent event) {
-    if(event.getMessage().equals("test")) {
-      RequestMenu request = new RequestMenu("test", "test", new Pakke[]{new Pakke(500, "test", "test")});
-      addon.labyAPI().minecraft().executeNextTick(() -> addon.labyAPI().minecraft().minecraftWindow().displayScreen(request));
 
-    } else if (event.getMessage().equals("socketTest")) {
-      IoSocket.getSocket().disconnect();
-      IoSocket.connectSocket();
-    }
   }
 
 }

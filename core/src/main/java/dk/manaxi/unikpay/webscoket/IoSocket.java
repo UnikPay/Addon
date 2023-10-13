@@ -35,7 +35,6 @@ public class IoSocket {
       socket.on(Socket.EVENT_DISCONNECT, args -> System.out.println("Socket.io disconnected."));
       socket.emit("information");
       socket.on("information", args -> {
-        System.out.println(args[0]);
         String ok = Arrays.toString(args);
         Gson gson = new Gson();
         JsonArray jsonArray = gson.fromJson(ok, JsonArray.class);
@@ -70,6 +69,17 @@ public class IoSocket {
         RequestMenu request = new RequestMenu(server, id, pakkerArray);
         Main.getInstance().labyAPI().minecraft().executeNextTick(() -> Main.getInstance().labyAPI().minecraft().minecraftWindow().displayScreen(request));
       });
+
+      socket.on("balance", args -> {
+        String ok = Arrays.toString(args);
+        Gson gson = new Gson();
+        JsonArray jsonArray = gson.fromJson(ok, JsonArray.class);
+        JsonObject obj = jsonArray.get(0).getAsJsonObject();
+        System.out.println(obj);
+        float balance = obj.getAsJsonObject("balance").get("$numberDecimal").getAsFloat();
+        account.setBalance(balance);
+      });
+
 
 
       socket.connect();
