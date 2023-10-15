@@ -20,7 +20,7 @@ import net.labymod.api.client.render.matrix.Stack;
 import net.labymod.api.util.bounds.ModifyReason;
 
 @AutoActivity
-@Link("example.lss")
+@Link("request.lss")
 public class RequestMenu extends SimpleActivity {
   private static final ModifyReason MODIFY_REASON = ModifyReason.of("Request");
   private final Pakke[] pakker;
