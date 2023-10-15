@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken;
 import dk.manaxi.unikpay.Main;
 import dk.manaxi.unikpay.api.classes.Pakke;
 import dk.manaxi.unikpay.events.AccountEvt;
+import dk.manaxi.unikpay.events.BalanceChangeEvt;
 import dk.manaxi.unikpay.menus.RequestMenu;
 import dk.manaxi.unikpay.user.Account;
 import io.socket.client.IO;
@@ -78,6 +79,7 @@ public class IoSocket {
         System.out.println(obj);
         float balance = obj.getAsJsonObject("balance").get("$numberDecimal").getAsFloat();
         account.setBalance(balance);
+        labyAPI().eventBus().fire(new BalanceChangeEvt(account.getBalance()));
       });
 
 

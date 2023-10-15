@@ -1,12 +1,9 @@
 package dk.manaxi.unikpay;
 
 import dk.manaxi.unikpay.config.Configuration;
-import dk.manaxi.unikpay.events.AccountEvt;
 import dk.manaxi.unikpay.hudwidget.Balance;
-import dk.manaxi.unikpay.listener.ChatListener;
 import dk.manaxi.unikpay.listener.KeyPress;
 import dk.manaxi.unikpay.webscoket.IoSocket;
-import net.labymod.api.Laby;
 import net.labymod.api.addon.LabyAddon;
 import net.labymod.api.client.Minecraft;
 import net.labymod.api.client.gui.icon.Icon;
