@@ -76,7 +76,6 @@ public class IoSocket {
         Gson gson = new Gson();
         JsonArray jsonArray = gson.fromJson(ok, JsonArray.class);
         JsonObject obj = jsonArray.get(0).getAsJsonObject();
-        System.out.println(obj);
         float balance = obj.getAsJsonObject("balance").get("$numberDecimal").getAsFloat();
         account.setBalance(balance);
         labyAPI().eventBus().fire(new BalanceChangeEvt(account.getBalance()));
