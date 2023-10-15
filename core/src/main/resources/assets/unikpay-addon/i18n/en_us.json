@@ -1,5 +1,5 @@
 {
-  "unikpay-addon": {
+  "unikpay": {
     "hudWidget": {
       "balance": {
         "name": "UnikPay Balance"
