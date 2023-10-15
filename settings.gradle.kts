@@ -1,4 +1,4 @@
-rootProject.name = "unikpay"
+rootProject.name = "unikpay-addon"
 
 pluginManagement {
     val labyGradlePluginVersion = "0.3.30"

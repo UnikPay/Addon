@@ -12,7 +12,7 @@ java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 labyMod {
     defaultPackageName = "dk.manaxi.unikpay" //change this to your main package name (used by all modules)
     addonInfo {
-        namespace = "unikpay"
+        namespace = "unikpay-addon"
         displayName = "Unikpay"
         author = "Itz_hoffe, Shad0wsense & Iskoldcool"
         description = "Handle incoming payments"
