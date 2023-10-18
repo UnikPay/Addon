@@ -9,7 +9,7 @@ dependencies {
     maven(mavenCentral(), "io.socket:socket.io-client:2.1.0")
     maven(mavenCentral(), "io.socket:engine.io-client:2.1.0")
     maven(mavenCentral(), "org.json:json:20231013")
-    maven(mavenCentral(), "com.squareup.okhttp3:okhttp:4.11.0")
+    maven(mavenCentral(), "com.squareup.okhttp3:okhttp:4.12.0")
     maven(mavenCentral(), "org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
     maven(mavenCentral(), "com.squareup.okio:okio-jvm:3.6.0")
     maven("https://jitpack.io", "com.github.UnikPay.UnikPay:unikpay-api:1.0.11")
