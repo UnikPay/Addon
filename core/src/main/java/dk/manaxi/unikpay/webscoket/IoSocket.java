@@ -12,6 +12,7 @@ import dk.manaxi.unikpay.menus.RequestMenu;
 import dk.manaxi.unikpay.user.Account;
 import io.socket.client.IO;
 import io.socket.client.Socket;
+import net.labymod.api.Laby;
 
 import java.lang.reflect.Type;
 import java.net.URISyntaxException;
@@ -67,8 +68,10 @@ public class IoSocket {
         Pakke[] pakkerArray = pakker.toArray(new Pakke[0]);
         String id = obj.get("_id").getAsString();
 
-        RequestMenu request = new RequestMenu(server, id, pakkerArray);
-        Main.getInstance().labyAPI().minecraft().executeNextTick(() -> Main.getInstance().labyAPI().minecraft().minecraftWindow().displayScreen(request));
+        Laby.labyAPI().minecraft().executeOnRenderThread(() -> {
+          RequestMenu request = new RequestMenu(server, id, pakkerArray);
+          Main.getInstance().labyAPI().minecraft().executeNextTick(() -> Main.getInstance().labyAPI().minecraft().minecraftWindow().displayScreen(request));
+        });
       });
 
       socket.on("balance", args -> {
