@@ -48,8 +48,7 @@ public class RequestMenu extends SimpleActivity {
     for (Pakke pakke : pakker) {
       listWidget.addEntry(ComponentWidget.text(pakke.getName() + " for " + pakke.getPrice() + " ems").addId("pakke-navn") );
     }
-    listWidget.spaceLeft().set(438.00F);
-    listWidget.setTranslateY(265.5F);
+    listWidget.addId("pakke-list");
 
 
     ComponentWidget componentWidget = ComponentWidget.text("§aØnsker du at godkende følgende anmodning?");

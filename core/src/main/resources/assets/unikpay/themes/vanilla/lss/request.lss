@@ -13,9 +13,9 @@
   alignment-y: center;
 }
 
-.pakke-navn {
-  left: 50%;
-  top: 50%;
+.pakke-list {
+  left: 42.5%;
+  top: 53%;
   alignment-x: center;
   alignment-y: center;
 }
