@@ -14,17 +14,13 @@ import net.labymod.api.client.gui.screen.widget.widgets.input.TextFieldWidget.Te
 import net.labymod.api.client.gui.screen.widget.widgets.input.dropdown.DropdownWidget.DropdownSetting;
 import net.labymod.api.configuration.loader.annotation.ConfigName;
 import net.labymod.api.configuration.loader.annotation.SpriteSlot;
-import net.labymod.api.configuration.loader.annotation.SpriteTexture;
 import net.labymod.api.configuration.loader.property.ConfigProperty;
 import net.labymod.api.configuration.settings.Setting;
-import net.labymod.api.configuration.settings.annotation.SettingSection;
 import net.labymod.api.util.MethodOrder;
 
 @SuppressWarnings("FieldMayBeFinal")
 @ConfigName("settings")
 public class Configuration extends AddonConfig {
-
-  @SettingSection("general")
   @SwitchSetting
   private final ConfigProperty<Boolean> enabled = new ConfigProperty<>(true);
 
@@ -35,7 +31,7 @@ public class Configuration extends AddonConfig {
   }
 
   @TextFieldSetting
-  private ConfigProperty<String> text = new ConfigProperty<>("Key");
+  public ConfigProperty<String> token = new ConfigProperty<>("Key");
   @MethodOrder(after = "text")
   @SpriteSlot(x = 2, y = 6)
   @ButtonSetting
@@ -54,11 +50,6 @@ public class Configuration extends AddonConfig {
   public ConfigProperty<Boolean> enabled() {
     return this.enabled;
   }
-
-  public ConfigProperty<String> getToken() {
-    return this.text;
-  }
-
 
   public ConfigProperty<FORMATTING_MODE> getType() {
     return this.type;

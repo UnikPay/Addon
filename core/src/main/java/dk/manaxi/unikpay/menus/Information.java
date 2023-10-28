@@ -1,9 +1,7 @@
 package dk.manaxi.unikpay.menus;
 
-import dk.manaxi.unikpay.Main;
 import dk.manaxi.unikpay.user.Account;
 import dk.manaxi.unikpay.webscoket.IoSocket;
-import io.socket.client.IO;
 import net.labymod.api.client.gui.icon.Icon;
 import net.labymod.api.client.gui.mouse.MutableMouse;
 import net.labymod.api.client.gui.screen.Parent;

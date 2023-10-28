@@ -1,6 +1,5 @@
 package dk.manaxi.unikpay.hudwidget;
 
-import dk.manaxi.unikpay.Main;
 import dk.manaxi.unikpay.events.AccountEvt;
 import dk.manaxi.unikpay.events.BalanceChangeEvt;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextHudWidget;

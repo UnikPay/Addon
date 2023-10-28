@@ -1,12 +1,12 @@
 package dk.manaxi.unikpay.utils;
 
 import dk.manaxi.unikpay.Main;
+import java.io.IOException;
 import net.labymod.api.client.gui.screen.NamedScreen;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import java.io.IOException;
 
 public class RequestUtil {
 
@@ -16,7 +16,7 @@ public class RequestUtil {
     String url = "https://unikpay.manaxi.dk/v1/request/" + id + "/" + choice;
 
     okhttp3.Request request = new okhttp3.Request.Builder().url(url).post(RequestBody.create(MediaType.parse("application/json"), ""))
-        .header("Authorization", Main.getInstance().configuration.getToken().get())
+        .header("Authorization", Main.getInstance().configuration.token.get())
         .build();
     Main.getInstance().labyAPI().minecraft().minecraftWindow().displayScreen(NamedScreen.MAIN_MENU.create());
     Response response = client.newCall(request).execute();

@@ -2,9 +2,8 @@ package dk.manaxi.unikpay.user;
 
 import dk.manaxi.unikpay.Main;
 import dk.manaxi.unikpay.utils.FormatingUtils;
-import net.labymod.api.client.gui.icon.Icon;
-
 import java.util.UUID;
+import net.labymod.api.client.gui.icon.Icon;
 
 public class Account {
 

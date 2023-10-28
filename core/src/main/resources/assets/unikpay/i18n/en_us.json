@@ -7,15 +7,10 @@
     },
     "settings": {
       "name": "UnikPay",
-      "header": {
-        "general": {
-          "name": "UnikPay settings"
-        }
-      },
       "enabled": {
         "name": "Enable Unikpay"
       },
-      "text": {
+      "token": {
         "name": "indsæt din labyToken",
         "description": "Din Labymod-token, som er hemmelig, skal være her.",
         "blank": "Din token er tom. Indsæt din token her."

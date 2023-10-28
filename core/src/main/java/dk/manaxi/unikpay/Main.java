@@ -7,9 +7,7 @@ import net.labymod.api.addon.LabyAddon;
 import net.labymod.api.client.Minecraft;
 import net.labymod.api.client.gui.icon.Icon;
 import net.labymod.api.client.resources.ResourceLocation;
-import net.labymod.api.configuration.loader.ConfigProvider;
 import net.labymod.api.models.addon.annotation.AddonMain;
-import java.util.function.Consumer;
 
 @AddonMain
 public class Main extends LabyAddon<Configuration> {
@@ -24,7 +22,9 @@ public class Main extends LabyAddon<Configuration> {
   @Override
   protected void enable() {
     this.registerSettingCategory();
-    IoSocket.connectSocket();
+    if (configuration.enabled().get()) {
+      IoSocket.connectSocket();
+    }
 
     labyAPI().hudWidgetRegistry().register(new Balance("balance", hudIcon));
     this.logger().info("Enabled the Addon");

@@ -1,5 +1,8 @@
 package dk.manaxi.unikpay.webscoket;
 
+import static java.util.Collections.singletonMap;
+import static net.labymod.api.Laby.labyAPI;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -12,17 +15,13 @@ import dk.manaxi.unikpay.menus.RequestMenu;
 import dk.manaxi.unikpay.user.Account;
 import io.socket.client.IO;
 import io.socket.client.Socket;
-import net.labymod.api.Laby;
-
 import java.lang.reflect.Type;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-
-import static java.util.Collections.singletonMap;
-import static net.labymod.api.Laby.labyAPI;
+import net.labymod.api.Laby;
 
 public class IoSocket {
   private static Socket socket;
@@ -31,7 +30,7 @@ public class IoSocket {
 
   public static void connectSocket() {
     try {
-      IO.Options options = IO.Options.builder().setAuth(singletonMap("token", Main.getInstance().configuration.getToken().get())).build();
+      IO.Options options = IO.Options.builder().setAuth(singletonMap("token", Main.getInstance().configuration.token.get())).build();
       socket = IO.socket("https://unikpay.manaxi.dk/", options);
       socket.on(Socket.EVENT_CONNECT, args -> System.out.println("Socket.io connected."));
       socket.on(Socket.EVENT_DISCONNECT, args -> System.out.println("Socket.io disconnected."));
