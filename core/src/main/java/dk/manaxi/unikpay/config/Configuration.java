@@ -32,10 +32,10 @@ public class Configuration extends AddonConfig {
 
   @TextFieldSetting
   public ConfigProperty<String> token = new ConfigProperty<>("Key");
-  @MethodOrder(after = "text")
+  @MethodOrder(after = "token")
   @SpriteSlot(x = 2, y = 6)
   @ButtonSetting
-  public void print(Setting setting) {
+  public void reconnect(Setting setting) {
     IoSocket.getSocket().disconnect();
     IoSocket.connectSocket();
     NotificationUtil.createNotification("Reconnected to socket");
