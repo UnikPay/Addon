@@ -13,8 +13,7 @@ public class NotificationUtil {
     Notification.Builder builder = Notification.builder()
         .title(Component.text("UNIKPAY"))
         .text(Component.text(message))
-        .icon(Main.hudIcon)
-        .type(Type.SYSTEM);
+        .icon(Main.hudIcon);
     Laby.labyAPI().notificationController().push(builder.build());
   }
 
