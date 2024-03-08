@@ -10,7 +10,7 @@ dependencies {
     maven(mavenCentral(), "io.socket:engine.io-client:2.1.0")
     maven(mavenCentral(), "org.json:json:20240303")
     maven(mavenCentral(), "com.squareup.okhttp3:okhttp:4.12.0")
-    maven(mavenCentral(), "org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
+    maven(mavenCentral(), "org.jetbrains.kotlin:kotlin-stdlib:1.9.23")
     maven(mavenCentral(), "com.squareup.okio:okio-jvm:3.8.0")
     maven("https://jitpack.io", "com.github.UnikPay.UnikPay:unikpay-api:1.1.2")
     // If you want to use external libraries, you can do that here.
